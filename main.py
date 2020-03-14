@@ -27,9 +27,9 @@ class Receiver:
         return self.task_name and self.student_name and self.code
 
     def receive(self):
-        print(self.task_name)
-        print(self.student_name)
-        print(self.code)
+        print("Task name:", self.task_name)
+        print("Student name:",self.student_name)
+        print("Submission: \n", self.code)
         if not self.__isDataValid():
             raise Exception("You specified wrong parameter.")
 
