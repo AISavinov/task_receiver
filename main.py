@@ -23,10 +23,15 @@ class Receiver:
         match = re.search(r'.*\/(?P<name>.*)\.git', repo_url)
         return match.group('name')
 
+    def __isDataValid(self):
+        return self.task_name and self.student_name and self.code
+
     def receive(self):
         print(self.task_name)
         print(self.student_name)
         print(self.code)
+        if not self.__isDataValid():
+            raise Exception("You specified wrong parameter.")
 
         submission_url = "http://51.15.104.77:3333/submission"
         try:
