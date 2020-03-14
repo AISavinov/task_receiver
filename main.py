@@ -15,7 +15,7 @@ class Receiver:
         for root, dirs, files in os.walk(".."):
             for file in files:
                 if regex.match(file):
-                    with open('../' + file) as f:
+                    with open(os.path.dirname(os.path.abspath(__file__)) +"/../"+ file) as f:
                         return ''.join(f.readlines())
 
     @classmethod
